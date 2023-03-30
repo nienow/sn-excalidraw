@@ -1,0 +1,12 @@
+{
+  "identifier": "randombits.excalidraw.local",
+  "name": "Exalidraw",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "version": "1.0.0",
+  "description": "A drawing editor that uses the opensource Exalidraw library",
+  "url": "http://localhost:8085/",
+  "download_url": "http://localhost:8085/latest.zip",
+  "latest_url": "http://localhost:8085/package.json",
+  "thumbnail_url": ""
+}
