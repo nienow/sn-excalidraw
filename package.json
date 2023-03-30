@@ -7,11 +7,12 @@
     "preview": "live-server --cors dist/"
   },
   "dependencies": {
-    "@preact/compat": "^17.1.2",
+    "@excalidraw/excalidraw": "^0.14.2",
     "@standardnotes/component-relay": "^2.2.2",
     "@standardnotes/models": "^1.43.11",
     "@standardnotes/stylekit": "5.29.3",
-    "preact": "^10.13.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",

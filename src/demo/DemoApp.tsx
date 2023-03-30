@@ -3,8 +3,8 @@ import {EditorProvider} from "../providers/EditorProvider";
 import {DATA_ONE, DATA_TWO, DATA_UNSUPPORTED} from "./test-data";
 
 const EXAMPLES = [
-  {title: 'One', data: DATA_ONE},
-  {title: 'Two', data: DATA_TWO},
+  {title: 'Empty', data: DATA_ONE},
+  {title: 'Rectangle', data: DATA_TWO},
   {title: 'Unsupported', data: DATA_UNSUPPORTED}
 ]
 

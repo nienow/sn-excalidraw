@@ -36,6 +36,6 @@ componentRelay.streamContextItem((note) => {
 const save = (data: any) => {
   componentRelay.saveItemWithPresave(currentNote, () => {
     currentNote.content.text = JSON.stringify(data);
-    currentNote.content.preview_plain = data.text;
+    currentNote.content.preview_plain = '';
   });
 };

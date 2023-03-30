@@ -9,12 +9,6 @@
     ]
   ],
   "plugins": [
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "runtime": "automatic",
-        "importSource": "preact"
-      }
-    ]
+    "@babel/plugin-transform-react-jsx"
   ]
 }

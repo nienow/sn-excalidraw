@@ -53,16 +53,11 @@ module.exports = (env, argv) => ({
       'node_modules',
       'src'
     ],
-    extensions: ['.tsx', '.ts', '.js'],
-    alias: {
-      react: "preact/compat",
-      'react-dom': "preact/compat",
-      "react/jsx-runtime": "preact/jsx-runtime"
-    }
+    extensions: ['.tsx', '.ts', '.js']
   },
   devServer: {
-    open: ['/demo.html'],
     https: false,
+    port: 8085,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",

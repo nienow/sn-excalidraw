@@ -2,7 +2,7 @@ export const parseEditorData = (text: string) => {
   if (text.indexOf('{') === 0) {
     try {
       const parsedData = JSON.parse(text);
-      if (parsedData.editor && parsedData.editor === 'my-editor') {
+      if (parsedData.elements && parsedData.appState) {
         return parsedData;
       }
     } catch (e) {
@@ -13,7 +13,8 @@ export const parseEditorData = (text: string) => {
 
 export const createNewData = () => {
   return {
-    editor: 'my-editor',
-    text: ''
+    elements: [],
+    appState: {},
+    scrollToContent: true
   };
 };

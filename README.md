@@ -1,10 +1,4 @@
-# Standard Notes Editor Extension Template
-
-Standard Notes extension that splits a note into multiple areas.
-
-Documentation & Demo at https://randombits.dev/standard-notes/template
-
-## Development
+# Standard Notes Excalidraw Extension
 
 Install Depedencies: `pnpm install`
 

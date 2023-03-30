@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import Unsupported from "../components/Unsupported";
-import CustomEditor from "../components/CustomEditor";
+import Editor from "../components/Editor";
 import {createNewData, parseEditorData} from "../utils";
 
 interface IEditorContext {
@@ -62,7 +62,7 @@ export const EditorProvider = ({text, save, isLocked}) => {
 
   const renderContent = () => {
     if (data) {
-      return <CustomEditor/>;
+      return <Editor/>;
     } else if (unsupported) {
       return <Unsupported eraseFn={eraseDataAndStartNewNote}></Unsupported>;
     } else {

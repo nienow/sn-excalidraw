@@ -13,7 +13,7 @@ html {
 }
 
 .main {
-  padding: 20px;
+  height: 100vh;
 }
 
 textarea {
@@ -27,3 +27,12 @@ textarea {
   resize: none;
   color: var(--sn-stylekit-foreground-color);
 }
+
+//.main .excalidraw {
+//  --default-bg-color: var(--sn-stylekit-background-color);
+//  --icon-fill-color: var(--sn-stylekit-foreground-color);
+//  --color-primary: #0000ff !important;
+//  --color-primary-darker: #f783ac;
+//  --color-primary-darkest: #e64980;
+//  --color-primary-light: #f2a9c4;
+//}
