@@ -13,10 +13,11 @@ const componentRelay = new ComponentRelay({
   options: {
     coallesedSaving: true,
     coallesedSavingDelay: 400,
-    debug: true
+    debug: false
   }
 });
 
+let root;
 componentRelay.streamContextItem((note) => {
   currentNote = note;
   // Only update UI on non-metadata updates.
@@ -26,7 +27,11 @@ componentRelay.streamContextItem((note) => {
   const text = note.content?.text || '';
   const isLocked = componentRelay.getItemAppDataValue(note, AppDataField.Locked);
 
-  createRoot(document.getElementById('root')).render(
+  if (root) {
+    root.unmount();
+  }
+  root = createRoot(document.getElementById('root'));
+  root.render(
     <React.StrictMode>
       <EditorProvider text={text} save={save} isLocked={isLocked}/>
     </React.StrictMode>
