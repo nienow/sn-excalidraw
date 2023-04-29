@@ -17,7 +17,7 @@ const componentRelay = new ComponentRelay({
   }
 });
 
-let root;
+const root = createRoot(document.getElementById('root'));
 componentRelay.streamContextItem((note) => {
   currentNote = note;
   // Only update UI on non-metadata updates.
@@ -26,11 +26,7 @@ componentRelay.streamContextItem((note) => {
   }
   const text = note.content?.text || '';
   const isLocked = componentRelay.getItemAppDataValue(note, AppDataField.Locked);
-
-  if (root) {
-    root.unmount();
-  }
-  root = createRoot(document.getElementById('root'));
+  
   root.render(
     <React.StrictMode>
       <EditorProvider text={text} save={save} isLocked={isLocked}/>

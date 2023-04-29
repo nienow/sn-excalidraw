@@ -1,23 +1,34 @@
-import React from 'react';
-import {Excalidraw} from "@excalidraw/excalidraw";
+import React, {useRef} from 'react';
+import {Excalidraw, getSceneVersion} from "@excalidraw/excalidraw";
 import {useEditor} from "../providers/EditorProvider";
 
 const Editor = () => {
   const {data, saveNote, isLocked} = useEditor();
+  const el = useRef();
+  let lastVersion = getSceneVersion(data.elements);
+  let libraryCnt = data.libraryItems.length;
 
   const onChange = (elements) => {
-    data.elements = elements;
-    saveNote();
+    const newVersion = getSceneVersion(elements);
+    if (newVersion > lastVersion) {
+      lastVersion = newVersion;
+      data.elements = elements;
+      saveNote();
+    }
   };
 
   const onLibraryChange = (libraryItems) => {
-    data.libraryItems = libraryItems;
-    saveNote();
+    const newCtn = libraryItems.length;
+    if (newCtn !== libraryCnt) {
+      libraryCnt = newCtn;
+      data.libraryItems = libraryItems;
+      saveNote();
+    }
   };
 
   return (
     <div className="main">
-      <Excalidraw key={Math.random()} initialData={data} theme={'dark'} onChange={onChange} onLibraryChange={onLibraryChange}
+      <Excalidraw ref={el} key={Math.random()} initialData={data} theme={'dark'} onChange={onChange} onLibraryChange={onLibraryChange}
                   viewModeEnabled={isLocked}/>
     </div>
   );
