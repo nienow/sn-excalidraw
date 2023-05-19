@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './stylesheets/main.scss';
+import './index.css';
 import {createRoot} from "react-dom/client";
 import {EditorProvider} from "./providers/EditorProvider";
 import ComponentRelay from "@standardnotes/component-relay";
@@ -26,7 +26,7 @@ componentRelay.streamContextItem((note) => {
   }
   const text = note.content?.text || '';
   const isLocked = componentRelay.getItemAppDataValue(note, AppDataField.Locked);
-  
+
   root.render(
     <React.StrictMode>
       <EditorProvider text={text} save={save} isLocked={isLocked}/>

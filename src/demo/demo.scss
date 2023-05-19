@@ -1,3 +1,12 @@
+@import '@standardnotes/stylekit/dist/stylekit.css';
+
+body {
+  background-color: var(--sn-stylekit-background-color);
+  color: var(--sn-stylekit-foreground-color);
+  font-family: var(--sn-stylekit-sans-serif-font);
+  font-size: var(--sn-stylekit-font-size-editor);
+}
+
 .demo {
   display: flex;
   min-height: 100vh;
@@ -20,6 +29,8 @@
 
   .content {
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .content-header {
@@ -30,6 +41,12 @@
     div {
       margin-right: 20px;
     }
+  }
+
+  iframe {
+    flex: 1 1 auto;
+    width: 100%;
+    border: 0;
   }
 }
 

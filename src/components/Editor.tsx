@@ -6,7 +6,7 @@ const Editor = () => {
   const {data, saveNote, isLocked} = useEditor();
   const el = useRef();
   let lastVersion = getSceneVersion(data.elements);
-  let libraryCnt = data.libraryItems.length;
+  let libraryCnt = data.libraryItems?.length || 0;
 
   const onChange = (elements) => {
     const newVersion = getSceneVersion(elements);
