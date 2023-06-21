@@ -8,6 +8,12 @@ const Editor = () => {
   let lastVersion = getSceneVersion(data.elements);
   let libraryCnt = data.libraryItems?.length || 0;
 
+  const UIOptions = {
+    canvasActions: {
+      toggleTheme: true
+    },
+  };
+
   const onChange = (elements, appState, files) => {
     const newVersion = getSceneVersion(elements);
     if (newVersion > lastVersion) {
@@ -38,7 +44,7 @@ const Editor = () => {
   return (
     <div className="main">
       <Excalidraw ref={el} key={Math.random()} initialData={data} theme={'dark'} onChange={onChange} onLibraryChange={onLibraryChange}
-                  viewModeEnabled={isLocked}/>
+                  viewModeEnabled={isLocked} UIOptions={UIOptions}/>
     </div>
   );
 }
