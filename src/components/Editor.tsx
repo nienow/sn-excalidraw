@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Excalidraw, getSceneVersion, serializeAsJSON} from "@excalidraw/excalidraw";
+import {Excalidraw, getSceneVersion} from "@excalidraw/excalidraw";
 import {useEditor} from "../providers/EditorProvider";
 
 const Editor = () => {
