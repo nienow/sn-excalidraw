@@ -5,8 +5,8 @@
   "area": "editor-editor",
   "version": "1.0.0",
   "description": "A drawing editor that uses the opensource Exalidraw library",
-  "url": "https://nienow.github.io/sn-excalidraw/",
-  "download_url": "https://nienow.github.io/sn-excalidraw/latest.zip",
-  "latest_url": "https://nienow.github.io/sn-excalidraw/package.json",
+  "url": "https://flightmansam.github.io/sn-excalidraw/",
+  "download_url": "https://flightmansam.github.io/sn-excalidraw/latest.zip",
+  "latest_url": "https://flightmansam.github.io/sn-excalidraw/package.json",
   "thumbnail_url": ""
 }
