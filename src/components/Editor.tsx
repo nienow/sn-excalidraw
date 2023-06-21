@@ -18,10 +18,10 @@ const Editor = () => {
         data.files = files;
       } 
 
-      if (Object.keys(appState).length !== 0) {
-        //non empty appState
-        data.appState = appState;
-      } 
+      // if (Object.keys(appState).length !== 0) {
+      //   //non empty appState
+      //   data.appState = appState;
+      // } 
       saveNote();
     }
   };
