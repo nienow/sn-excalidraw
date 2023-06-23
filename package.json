@@ -7,7 +7,7 @@
     "preview": "live-server --cors dist/"
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "^0.14.2",
+    "@excalidraw/excalidraw": "^0.15.0",
     "@standardnotes/component-relay": "^2.2.2",
     "@standardnotes/models": "^1.43.11",
     "@standardnotes/stylekit": "5.29.3",
