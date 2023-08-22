@@ -8,11 +8,9 @@
   },
   "dependencies": {
     "@excalidraw/excalidraw": "^0.15.0",
-    "@standardnotes/component-relay": "^2.2.2",
-    "@standardnotes/models": "^1.43.11",
-    "@standardnotes/stylekit": "5.29.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sn-extension-api": "^0.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",

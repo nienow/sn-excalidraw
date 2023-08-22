@@ -2,6 +2,7 @@ import React, {createContext, useContext, useEffect, useState} from 'react';
 import Unsupported from "../components/Unsupported";
 import Editor from "../components/Editor";
 import {createNewData, parseEditorData} from "../utils";
+import snApi from "sn-extension-api";
 
 interface IEditorContext {
   data: any;
@@ -19,7 +20,7 @@ const EditorContext = createContext<IEditorContext>({
 
 export const useEditor = () => useContext(EditorContext);
 
-export const EditorProvider = ({text, save, isLocked}) => {
+export const EditorProvider = () => {
   const [data, setData] = useState(null);
   const [unsupported, setUnsupported] = useState(false);
 
@@ -31,7 +32,7 @@ export const EditorProvider = ({text, save, isLocked}) => {
   };
 
   const saveNote = (dataToSave = data) => {
-    save(dataToSave);
+    snApi.text = JSON.stringify(dataToSave);
   };
 
   const saveNoteAndRefresh = () => {
@@ -40,8 +41,8 @@ export const EditorProvider = ({text, save, isLocked}) => {
   };
 
   useEffect(() => {
-    if (text) {
-      const parsedData = parseEditorData(text);
+    if (snApi.text) {
+      const parsedData = parseEditorData(snApi.text);
       if (parsedData) {
         // data that matches our extension
         setData(parsedData);
@@ -58,7 +59,7 @@ export const EditorProvider = ({text, save, isLocked}) => {
       setUnsupported(false);
       saveNote(newData);
     }
-  }, [text]);
+  }, []);
 
   const renderContent = () => {
     if (data) {
@@ -71,7 +72,7 @@ export const EditorProvider = ({text, save, isLocked}) => {
   };
 
   return (
-    <EditorContext.Provider value={{data, saveNote, saveNoteAndRefresh, isLocked}}>
+    <EditorContext.Provider value={{data, saveNote, saveNoteAndRefresh, isLocked: snApi.locked}}>
       {renderContent()}
     </EditorContext.Provider>
   );
