@@ -10,7 +10,7 @@
     "@excalidraw/excalidraw": "^0.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sn-extension-api": "^0.3.1"
+    "sn-extension-api": "0.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
