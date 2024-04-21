@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@excalidraw/excalidraw':
     specifier: ^0.15.0
@@ -58,8 +62,8 @@ devDependencies:
     specifier: ^13.2.1
     version: 13.2.1(sass@1.59.3)(webpack@5.76.2)
   style-loader:
-    specifier: ^3.3.2
-    version: 3.3.2(webpack@5.76.2)
+    specifier: ^4.0.0
+    version: 4.0.0(webpack@5.76.2)
   ts-loader:
     specifier: ^9.4.2
     version: 9.4.2(typescript@4.9.5)(webpack@5.76.2)
@@ -4756,11 +4760,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /style-loader@3.3.2(webpack@5.76.2):
-    resolution: {integrity: sha512-RHs/vcrKdQK8wZliteNK4NKzxvLBzpuHMqYmUVWeKa6MkaIQ97ZTOS0b+zapZhy6GcrgWnvWYCMHRirC3FsUmw==}
-    engines: {node: '>= 12.13.0'}
+  /style-loader@4.0.0(webpack@5.76.2):
+    resolution: {integrity: sha512-1V4WqhhZZgjVAVJyt7TdDPZoPBPNHbekX4fWnCJL1yQukhCeZhJySUL+gL9y6sNdN95uEOS83Y55SqHcP7MzLA==}
+    engines: {node: '>= 18.12.0'}
     peerDependencies:
-      webpack: ^5.0.0
+      webpack: ^5.27.0
     dependencies:
       webpack: 5.76.2(webpack-cli@5.0.1)
     dev: true
