@@ -1,10 +1,9 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {Excalidraw, getSceneVersion} from "@excalidraw/excalidraw";
 import {useEditor} from "../providers/EditorProvider";
 
 const Editor = () => {
   const {data, saveNote, isLocked} = useEditor();
-  const el = useRef();
   let lastVersion = getSceneVersion(data.elements);
   let libraryCnt = data.libraryItems?.length || 0;
 
@@ -22,12 +21,12 @@ const Editor = () => {
       if (Object.keys(files).length !== 0) {
         //non empty files
         data.files = files;
-      } 
+      }
 
       // if (Object.keys(appState).length !== 0) {
       //   //non empty appState
       //   data.appState = appState;
-      // } 
+      // }
       saveNote();
     }
   };
@@ -43,10 +42,10 @@ const Editor = () => {
 
   return (
     <div className="main">
-      <Excalidraw ref={el} key={Math.random()} initialData={data} theme={'dark'} onChange={onChange} onLibraryChange={onLibraryChange}
+      <Excalidraw key={Math.random()} initialData={data} theme={'dark'} onChange={onChange} onLibraryChange={onLibraryChange}
                   viewModeEnabled={isLocked} UIOptions={UIOptions}/>
     </div>
   );
-}
+};
 
-export default Editor
+export default Editor;

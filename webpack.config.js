@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const ZipPlugin = require('zip-webpack-plugin');
+const webpack = require('webpack');
 
 const PACKAGE = require('./package.json');
 const version = PACKAGE.version;
@@ -64,6 +65,9 @@ module.exports = (env, argv) => ({
     }
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env.IS_PREACT": JSON.stringify("false")
+    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
