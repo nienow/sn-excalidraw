@@ -56,7 +56,6 @@ module.exports = (env, argv) => ({
     extensions: ['.tsx', '.ts', '.js']
   },
   devServer: {
-    https: false,
     port: 8085,
     headers: {
       "Access-Control-Allow-Origin": "*",
