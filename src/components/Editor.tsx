@@ -1,5 +1,5 @@
 import React from 'react';
-import {Excalidraw, Footer, getSceneVersion} from "@excalidraw/excalidraw";
+import {Excalidraw, Footer, getSceneVersion, MainMenu} from "@excalidraw/excalidraw";
 import {useEditor} from "../providers/EditorProvider";
 import snApi from "sn-extension-api";
 
@@ -24,11 +24,6 @@ const Editor = () => {
         //non empty files
         data.files = files;
       }
-
-      // if (Object.keys(appState).length !== 0) {
-      //   //non empty appState
-      //   data.appState = appState;
-      // }
       saveNote();
     }
   };
@@ -53,9 +48,9 @@ const Editor = () => {
         className="theme-btn"
         onClick={() => setThemeAndSave('light')}
       >
-        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class="" fill="none" stroke="currentColor"
-             stroke-linecap="round" stroke-linejoin="round">
-          <g stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+             strokeLinecap="round" strokeLinejoin="round">
+          <g stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
             <path
               d="M10 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM10 4.167V2.5M14.167 5.833l1.166-1.166M15.833 10H17.5M14.167 14.167l1.166 1.166M10 15.833V17.5M5.833 14.167l-1.166 1.166M5 10H3.333M5.833 5.833 4.667 4.667"></path>
           </g>
@@ -72,7 +67,7 @@ const Editor = () => {
         onClick={() => setThemeAndSave('dark')}
       >
         <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" fill="none" stroke="currentColor"
-             stroke-linecap="round" stroke-linejoin="round">
+             strokeLinecap="round" strokeLinejoin="round">
           <path clip-rule="evenodd" d="M10 2.5h.328a6.25 6.25 0 0 0 6.6 10.372A7.5 7.5 0 1 1 10 2.493V2.5Z"
                 stroke="currentColor"></path>
         </svg>
@@ -87,6 +82,17 @@ const Editor = () => {
     <div className="main">
       <Excalidraw key={Math.random()} initialData={data} theme={theme} onChange={onChange} onLibraryChange={onLibraryChange}
                   viewModeEnabled={isLocked} UIOptions={UIOptions}>
+        <MainMenu>
+          <MainMenu.DefaultItems.LoadScene/>
+          <MainMenu.DefaultItems.Export/>
+          <MainMenu.DefaultItems.SaveAsImage/>
+          <MainMenu.DefaultItems.ClearCanvas/>
+          <MainMenu.DefaultItems.Help/>
+          <MainMenu.DefaultItems.ChangeCanvasBackground/>
+          <div style={{'margin-top': '5px'}}>
+            {renderThemeBtn()}
+          </div>
+        </MainMenu>
         <Footer>
           {renderThemeBtn()}
         </Footer>
