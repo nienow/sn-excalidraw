@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack",
-    "preview": "live-server --cors dist/"
+    "preview": "live-server --port=8085 --cors dist/"
   },
   "dependencies": {
     "@excalidraw/excalidraw": "^0.17.6",
