@@ -3,7 +3,7 @@
   "name": "Exalidraw",
   "content_type": "SN|Component",
   "area": "editor-editor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A drawing editor that uses the opensource Exalidraw library",
   "url": "https://nienow.github.io/sn-excalidraw/",
   "download_url": "https://nienow.github.io/sn-excalidraw/latest.zip",
