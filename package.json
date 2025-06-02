@@ -7,7 +7,7 @@
     "preview": "live-server --port=8085 --cors dist/"
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "^0.17.6",
+    "@excalidraw/excalidraw": "^0.18.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sn-extension-api": "0.3.4"
