@@ -89,7 +89,7 @@ const Editor = () => {
           <MainMenu.DefaultItems.ClearCanvas/>
           <MainMenu.DefaultItems.Help/>
           <MainMenu.DefaultItems.ChangeCanvasBackground/>
-          <div style={{'margin-top': '5px'}}>
+          <div style={{marginTop: '5px'}}>
             {renderThemeBtn()}
           </div>
         </MainMenu>
